@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lease_agent_api
+    command: >
+      sh -c "python -m app.seed &&
+             python -m uvicorn app.api:app --host 0.0.0.0 --port 8000"
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_MODE=mock
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - lease_data:/app/data
+      - lease_chroma:/app/chroma_db
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lease_agent_ui
+    command: python -m streamlit run ui/streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+      - LLM_MODE=mock
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  lease_data:
+  lease_chroma:
