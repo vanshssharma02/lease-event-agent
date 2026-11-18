@@ -1,0 +1,70 @@
+{
+  "LSE-EXP-001": {
+    "lease_id": "LSE-EXP-001",
+    "asset_id": "AST-MERIDIAN-01",
+    "asset_name": "Meridian Industrial Park",
+    "tenant": "Apex Logistics Ltd",
+    "event_type": "EXPIRY",
+    "days_offset": 60,
+    "passing_rent": 240000.0,
+    "currency": "GBP",
+    "break_conditions_keywords": [
+      "vacant possession",
+      "material breach",
+      "written notice"
+    ],
+    "reinstatement_keywords": [
+      "pallet racking",
+      "mezzanine",
+      "cleaned and unencumbered",
+      "dilapidations",
+      "42,500"
+    ],
+    "expected_urgency": "CRITICAL"
+  },
+  "LSE-BRK-002": {
+    "lease_id": "LSE-BRK-002",
+    "asset_id": "AST-SOLSTICE-02",
+    "asset_name": "Solstice Commercial Tower",
+    "tenant": "Horizon Tech Systems",
+    "event_type": "BREAK",
+    "days_offset": 90,
+    "passing_rent": 385000.0,
+    "currency": "GBP",
+    "break_conditions_keywords": [
+      "vacant possession",
+      "six months prior notice",
+      "no rent arrears"
+    ],
+    "reinstatement_keywords": [
+      "communications cabling",
+      "demountable glass office pods",
+      "dilapidations",
+      "68,000"
+    ],
+    "expected_urgency": "HIGH"
+  },
+  "LSE-REV-003": {
+    "lease_id": "LSE-REV-003",
+    "asset_id": "AST-BOREALIS-03",
+    "asset_name": "Borealis Distribution Hub",
+    "tenant": "Al-Noor Trade & Logistics",
+    "event_type": "RENT_REVIEW",
+    "days_offset": 120,
+    "passing_rent": 195000.0,
+    "currency": "GBP",
+    "break_conditions_keywords": [
+      "break option",
+      "preconditions",
+      "written notice"
+    ],
+    "reinstatement_keywords": [
+      "demised premises",
+      "reinstatement",
+      "yield up",
+      "dilapidations",
+      "35,000"
+    ],
+    "expected_urgency": "HIGH"
+  }
+}
