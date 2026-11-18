@@ -1,0 +1,22 @@
+# Core production dependencies for lease-event-agent
+pydantic>=2.10.0,<3.0.0
+pydantic-settings>=2.2.0,<3.0.0
+chromadb>=0.5.0,<0.6.0
+openai>=1.30.0,<2.0.0
+reportlab>=4.2.0,<5.0.0
+tiktoken>=0.7.0,<1.0.0
+arabic-reshaper>=3.0.0,<4.0.0
+python-bidi>=0.4.2,<1.0.0
+pymupdf>=1.24.0,<2.0.0
+python-dotenv>=1.0.0,<2.0.0
+
+# Agent orchestration and scheduling
+langgraph>=0.2.0,<0.3.0
+apscheduler>=3.10.0,<4.0.0
+
+# FastAPI Approvals API
+fastapi>=0.110.0,<1.0.0
+uvicorn[standard]>=0.28.0,<1.0.0
+
+# Streamlit UI
+streamlit>=1.35.0,<2.0.0
